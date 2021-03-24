@@ -46,9 +46,9 @@ public class ProductDetailsApplication {
 			});
 			
 			// fetch customers by last name
-			log.info("Movie found with findByLastName('South'):");
+			log.info("Movie search with searchByTitleAndYear('Black Emanuelle', '1975'):");
 			log.info("--------------------------------------------");
-			repository.findByTitleAndYear("Black Emanuelle", "1975").forEach(movie_by_title_year -> {
+			repository.searchByTitleAndYear("Black Emanuelle", "1975").forEach(movie_by_title_year -> {
 			  log.info(movie_by_title_year.toString());
 			});
 			log.info("");
