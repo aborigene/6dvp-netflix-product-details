@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 import java.util.*;
+import com.google.gson.*;
 
 //import javax.swing.table.DefaultTableCellRenderer;
 
-import com.google.gson.*;
+
 
 @RestController
 public class ProductDetailsController { 
@@ -26,48 +27,48 @@ public class ProductDetailsController {
 		if(order_by.equals("likes")){
 			switch(top){
 				case 5:
-					movie = movieRepository.findTop5ByGenreContainingOrderByLikes(genre);
+					movie = movieRepository.findTop5ByGenreContainingIgnoreCaseOrderByLikes(genre);
 					break;
 				case 10:
-					movie = movieRepository.findTop10ByGenreContainingOrderByLikes(genre);
+					movie = movieRepository.findTop10ByGenreContainingIgnoreCaseOrderByLikes(genre);
 					break;
 				case 20: 
-					movie = movieRepository.findTop20ByGenreContainingOrderByLikes(genre);
+					movie = movieRepository.findTop20ByGenreContainingIgnoreCaseOrderByLikes(genre);
 					break;
 				default:
-					movie = movieRepository.findTopByGenreContainingOrderByLikes(genre);
+					movie = movieRepository.findTopByGenreContainingIgnoreCaseOrderByLikes(genre);
 			} 
 		}
 		else{
 			if(order_by.equals("dislikes")){
 				switch(top){
 					case 5:
-						movie = movieRepository.findTop5ByGenreContainingOrderByDislikes(genre);
+						movie = movieRepository.findTop5ByGenreContainingIgnoreCaseOrderByDislikes(genre);
 						break;
 					case 10:
-						movie = movieRepository.findTop10ByGenreContainingOrderByDislikes(genre);
+						movie = movieRepository.findTop10ByGenreContainingIgnoreCaseOrderByDislikes(genre);
 						break;
 					case 20: 
-						movie = movieRepository.findTop20ByGenreContainingOrderByDislikes(genre);
+						movie = movieRepository.findTop20ByGenreContainingIgnoreCaseOrderByDislikes(genre);
 						break;
 					default:
-						movie = movieRepository.findTopByGenreContainingOrderByDislikes(genre);
+						movie = movieRepository.findTopByGenreContainingIgnoreCaseOrderByDislikes(genre);
 				}
 			}
 			else{
 				if(order_by.equals("none")){
 					switch(top){
 						case 5:
-							movie = movieRepository.findTop5ByGenreContaining(genre);
+							movie = movieRepository.findTop5ByGenreContainingIgnoreCase(genre);
 							break;
 						case 10:
-							movie = movieRepository.findTop10ByGenreContaining(genre);
+							movie = movieRepository.findTop10ByGenreContainingIgnoreCase(genre);
 							break;
 						case 20: 
-							movie = movieRepository.findTop20ByGenreContaining(genre);
+							movie = movieRepository.findTop20ByGenreContainingIgnoreCase(genre);
 							break;
 						default:
-							movie = movieRepository.findTopByGenreContaining(genre);
+							movie = movieRepository.findTopByGenreContainingIgnoreCase(genre);
 					}	
 				}
 				else {
@@ -80,6 +81,7 @@ public class ProductDetailsController {
 		}
 		
 		return new ResponseEntity<String>(new Gson().toJson(movie), HttpStatus.OK);
+
 	}    
 
 	@RequestMapping(method = RequestMethod.GET, value = "/api/movie_search")
@@ -89,48 +91,48 @@ public class ProductDetailsController {
 		if(order_by.equals("likes")){
 			switch(top){
 				case 5:
-					movie = movieRepository.findTop5ByTitleContainingOrderByLikes(title_search);
+					movie = movieRepository.findTop5ByTitleContainingIgnoreCaseOrderByLikes(title_search);
 					break;
 				case 10:
-					movie = movieRepository.findTop10ByTitleContainingOrderByLikes(title_search);
+					movie = movieRepository.findTop10ByTitleContainingIgnoreCaseOrderByLikes(title_search);
 					break;
 				case 20: 
-					movie = movieRepository.findTop20ByTitleContainingOrderByLikes(title_search);
+					movie = movieRepository.findTop20ByTitleContainingIgnoreCaseOrderByLikes(title_search);
 					break;
 				default:
-					movie = movieRepository.findTopByTitleContainingOrderByLikes(title_search);
+					movie = movieRepository.findTopByTitleContainingIgnoreCaseOrderByLikes(title_search);
 			}
 		}
 		else{
 			if(order_by.equals("dislikes")){
 				switch(top){
 					case 5:
-						movie = movieRepository.findTop5ByTitleContainingOrderByDislikes(title_search);
+						movie = movieRepository.findTop5ByTitleContainingIgnoreCaseOrderByDislikes(title_search);
 						break;
 					case 10:
-						movie = movieRepository.findTop10ByTitleContainingOrderByDislikes(title_search);
+						movie = movieRepository.findTop10ByTitleContainingIgnoreCaseOrderByDislikes(title_search);
 						break;
 					case 20: 
-						movie = movieRepository.findTop20ByTitleContainingOrderByDislikes(title_search);
+						movie = movieRepository.findTop20ByTitleContainingIgnoreCaseOrderByDislikes(title_search);
 						break;
 					default:
-						movie = movieRepository.findTopByTitleContainingOrderByDislikes(title_search);
+						movie = movieRepository.findTopByTitleContainingIgnoreCaseOrderByDislikes(title_search);
 				}			
 			}
 			else{
 				if(order_by.equals("none")){
 					switch(top){
 						case 5:
-							movie = movieRepository.findTop5ByTitleContaining(title_search);
+							movie = movieRepository.findTop5ByTitleContainingIgnoreCase(title_search);
 							break;
 						case 10:
-							movie = movieRepository.findTop10ByTitleContaining(title_search);
+							movie = movieRepository.findTop10ByTitleContainingIgnoreCase(title_search);
 							break;
 						case 20: 
-							movie = movieRepository.findTop20ByTitleContaining(title_search);
+							movie = movieRepository.findTop20ByTitleContainingIgnoreCase(title_search);
 							break;
 						default:
-							movie = movieRepository.findTopByTitleContaining(title_search);
+							movie = movieRepository.findTopByTitleContainingIgnoreCase(title_search);
 					}
 				}
 				else{

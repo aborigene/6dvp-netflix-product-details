@@ -41,7 +41,7 @@ public class ProductDetailsApplication {
 			// fetch customers by last name
 			log.info("Movie found with findByTitleContaining('South'):");
 			log.info("--------------------------------------------");
-			repository.findByTitleContaining("South").forEach(movie_title_containing -> {
+			repository.findTopByTitleContainingIgnoreCase("South").forEach(movie_title_containing -> {
 			  log.info(movie_title_containing.toString());
 			});
 			

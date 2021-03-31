@@ -18,34 +18,34 @@ public interface MovieRepository extends CrudRepository<Movie, String>  {
     List<Movie> searchByTitleAndYear(String title, String year);
     List<Movie> findByGenre(String genre);
 
-    List<Movie> findTopByTitleContaining(String title);
-    List<Movie> findTop5ByTitleContaining(String title);
-    List<Movie> findTop10ByTitleContaining(String title);
-    List<Movie> findTop20ByTitleContaining(String title);
+    List<Movie> findTopByTitleContainingIgnoreCase(String title);
+    List<Movie> findTop5ByTitleContainingIgnoreCase(String title);
+    List<Movie> findTop10ByTitleContainingIgnoreCase(String title);
+    List<Movie> findTop20ByTitleContainingIgnoreCase(String title);
 
-    List<Movie> findTopByTitleContainingOrderByLikes(String title);
-    List<Movie> findTop5ByTitleContainingOrderByLikes(String title);
-    List<Movie> findTop10ByTitleContainingOrderByLikes(String title);
-    List<Movie> findTop20ByTitleContainingOrderByLikes(String title);
+    List<Movie> findTopByTitleContainingIgnoreCaseOrderByLikes(String title);
+    List<Movie> findTop5ByTitleContainingIgnoreCaseOrderByLikes(String title);
+    List<Movie> findTop10ByTitleContainingIgnoreCaseOrderByLikes(String title);
+    List<Movie> findTop20ByTitleContainingIgnoreCaseOrderByLikes(String title);
 
-    List<Movie> findTopByTitleContainingOrderByDislikes(String title);
-    List<Movie> findTop5ByTitleContainingOrderByDislikes(String title);
-    List<Movie> findTop10ByTitleContainingOrderByDislikes(String title);
-    List<Movie> findTop20ByTitleContainingOrderByDislikes(String title);
+    List<Movie> findTopByTitleContainingIgnoreCaseOrderByDislikes(String title);
+    List<Movie> findTop5ByTitleContainingIgnoreCaseOrderByDislikes(String title);
+    List<Movie> findTop10ByTitleContainingIgnoreCaseOrderByDislikes(String title);
+    List<Movie> findTop20ByTitleContainingIgnoreCaseOrderByDislikes(String title);
 
-    List<Movie> findTopByGenreContaining(String genre);
-    List<Movie> findTop5ByGenreContaining(String genre);
-    List<Movie> findTop10ByGenreContaining(String genre);
-    List<Movie> findTop20ByGenreContaining(String genre);
+    List<Movie> findTopByGenreContainingIgnoreCase(String genre);
+    List<Movie> findTop5ByGenreContainingIgnoreCase(String genre);
+    List<Movie> findTop10ByGenreContainingIgnoreCase(String genre);
+    List<Movie> findTop20ByGenreContainingIgnoreCase(String genre);
 
-    List<Movie> findTopByGenreContainingOrderByLikes(String genre);
-    List<Movie> findTop5ByGenreContainingOrderByLikes(String genre);
-    List<Movie> findTop10ByGenreContainingOrderByLikes(String genre);
-    List<Movie> findTop20ByGenreContainingOrderByLikes(String genre);
+    List<Movie> findTopByGenreContainingIgnoreCaseOrderByLikes(String genre);
+    List<Movie> findTop5ByGenreContainingIgnoreCaseOrderByLikes(String genre);
+    List<Movie> findTop10ByGenreContainingIgnoreCaseOrderByLikes(String genre);
+    List<Movie> findTop20ByGenreContainingIgnoreCaseOrderByLikes(String genre);
 
-    List<Movie> findTopByGenreContainingOrderByDislikes(String genre);
-    List<Movie> findTop5ByGenreContainingOrderByDislikes(String genre);
-    List<Movie> findTop10ByGenreContainingOrderByDislikes(String genre);
-    List<Movie> findTop20ByGenreContainingOrderByDislikes(String genre);
+    List<Movie> findTopByGenreContainingIgnoreCaseOrderByDislikes(String genre);
+    List<Movie> findTop5ByGenreContainingIgnoreCaseOrderByDislikes(String genre);
+    List<Movie> findTop10ByGenreContainingIgnoreCaseOrderByDislikes(String genre);
+    List<Movie> findTop20ByGenreContainingIgnoreCaseOrderByDislikes(String genre);
 
 }
