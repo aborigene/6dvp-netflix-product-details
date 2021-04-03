@@ -1,10 +1,16 @@
 from openjdk:17-buster
 
-COPY target/product_details-0.0.1-SNAPSHOT.jar /
+RUN mkdir /product_details
 
-COPY testdb.mv.db /
+COPY target/product_details-0.0.1-SNAPSHOT.jar /product_details
 
-COPY testdb.trace.db /
+COPY src/main/resources/moviedb.mv.db /product_details
 
-entrypoint ["java", "-jar", "/product_details-0.0.1-SNAPSHOT.jar"]
+COPY src/main/resources/moviedb.trace.db /product_details
+
+COPY src/main/resources/application.properties /product_details
+
+WORKDIR /product_details
+
+entrypoint ["java", "-jar", "/product_details/product_details-0.0.1-SNAPSHOT.jar"]
 
