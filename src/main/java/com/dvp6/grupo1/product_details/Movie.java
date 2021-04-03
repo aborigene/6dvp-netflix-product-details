@@ -17,10 +17,11 @@ private String poster;
 private String genre;
 private int likes;
 private int dislikes;
+private int views;
 
 protected Movie() {}
 
-public Movie(String imdbid, String title, String year, String type, String poster, String genre, int likes, int dislikes){
+public Movie(String imdbid, String title, String year, String type, String poster, String genre, int likes, int dislikes, int views){
     this.imdbid = imdbid;
     this.title = title;
     this.year = year;
@@ -29,11 +30,12 @@ public Movie(String imdbid, String title, String year, String type, String poste
     this.genre = genre;
     this.likes = likes;
     this.likes = dislikes;
+    this.views = views;
 }
 
 @Override
 public String toString(){
-    return String.format("Movie[imdbid=%s, title='%s', year='%s', type='%s', poster='%s', genre='%s', likes='%d', dislikes='%d']", imdbid, title, year, type, poster, genre, likes, dislikes);
+    return String.format("Movie[imdbid=%s, title='%s', year='%s', type='%s', poster='%s', genre='%s', likes='%d', dislikes='%d', views='%d']", imdbid, title, year, type, poster, genre, likes, dislikes, views);
 }
 
 public String toJson(){
@@ -70,6 +72,22 @@ public int getLikes(){
 
 public int getDislikes(){
     return this.dislikes;
+}
+
+public int getViews(){
+    return this.views;
+}
+
+public void setLikes(int likes){
+    this.likes = likes;
+}
+
+public void setViews(int views){
+    this.views = views;
+}
+
+public void setDislikes(int dislikes){
+    this.dislikes = dislikes;
 }
 
 }
