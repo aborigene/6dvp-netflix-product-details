@@ -24,6 +24,6 @@ public class ProductDetailsSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
         http.addFilterBefore(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
-                .authorizeRequests().anyRequest().permitAll();
+                .authorizeRequests().anyRequest().authenticated();
     }
 }
