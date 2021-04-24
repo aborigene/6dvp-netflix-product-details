@@ -16,14 +16,20 @@ Toda a API está documentada via Swagger, estando a sua documentação de uso di
 # Variáveis de ambiente.
 ## Configurações do MySQL
 DB_SERVER = Servidor do MySQL
+
 DB_PORT = Porta do servidor
+
 DB_USERNAME =Usuário
+
 DB_PASSWORD =Senha
 
 ## Configurações do RabbitMQ
 MQ_SERVER = Servidor do RabbitMQ
+
 MQ_PORT = Porta do servidor
+
 MQ_USERNAME =Usuário
+
 MQ_PASSWORD =Senha
 
 ## Dump Mysql
@@ -31,4 +37,5 @@ Restaurar o arquivo de backup product-details-db.sql localizado na pasta /data
 
 ## Execução Docker
 docker build -t 6dvp-netflix/product-details:v1.0.0 .
+
 docker run --name product-details -d -p 8092:8092 -e DB_SERVER=xxx.xxx.xxx.xxx -e DB_PORT=3308 -e DB_USERNAME=xxx -e DB_PASSWORD=xxx -e MQ_SERVER=xxx.xxx.xxx.xxx -e MQ_PORT=5672 -e MQ_USERNAME=xxx -e MQ_PASSWORD=xxx dvp-netflix/product-details:v1.0.0
