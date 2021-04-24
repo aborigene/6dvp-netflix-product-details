@@ -19,6 +19,7 @@ public class ProductDetailsApplication  {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProductDetailsApplication .class, args);
+    
 	}
 
 }

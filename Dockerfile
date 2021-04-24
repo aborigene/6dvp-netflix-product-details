@@ -1,16 +1,16 @@
-from openjdk:17-buster
+#
+# Build stage
+#
+FROM maven:3.6.3-openjdk-11-slim AS build
+COPY src /home/app/src/
+COPY pom.xml /home/app/
+WORKDIR /home/app/
+RUN mvn clean package -DskipTests
 
-RUN mkdir /product_details
-
-COPY target/product_details-0.0.1-SNAPSHOT.jar /product_details
-
-COPY src/main/resources/moviedb.mv.db /product_details
-
-COPY src/main/resources/moviedb.trace.db /product_details
-
-COPY src/main/resources/application.properties /product_details
-
-WORKDIR /product_details
-
-entrypoint ["java", "-jar", "/product_details/product_details-0.0.1-SNAPSHOT.jar"]
-
+#
+# Package stage
+#
+FROM openjdk:11.0.10-jre-slim
+COPY --from=build /home/app/target/product_details-1.0.0.jar /usr/local/lib/product_details-1.0.0.jar
+EXPOSE 8091
+ENTRYPOINT ["java","-jar","/usr/local/lib/product_details-1.0.0.jar"]
