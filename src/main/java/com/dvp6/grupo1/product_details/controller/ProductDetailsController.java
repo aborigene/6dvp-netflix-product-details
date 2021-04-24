@@ -147,7 +147,7 @@ public class ProductDetailsController {
 		return new ResponseEntity<String>(new Gson().toJson(movie), HttpStatus.OK);
 	}
 
-	@GetMapping("/getAll")
+	@GetMapping("/api/getAll")
 	public Iterable<MovieEntity> getAll() {
 		return movieRepository.findAll();
 	}

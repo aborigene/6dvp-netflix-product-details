@@ -1,7 +1,7 @@
 /*
   Autor: Guilherme Rubio
   e-mail: guilherme.rubio@outlook.com.br
-  Data: 13/04/2021
+  Data: 24/04/2021
 */
 
 package com.dvp6.grupo1.product_details;

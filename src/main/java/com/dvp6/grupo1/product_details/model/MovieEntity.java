@@ -1,3 +1,9 @@
+/*
+  Autor: Guilherme Rubio
+  e-mail: guilherme.rubio@outlook.com.br
+  Data: 24/04/2021
+*/
+
 package com.dvp6.grupo1.product_details.model;
 
 import javax.persistence.Column;
@@ -7,6 +13,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/*
+  Classe responsável por criar uma entidade vinculada com o banco de dados.
+*/
 @Entity
 @Table(name = "movies")
 public class MovieEntity {
