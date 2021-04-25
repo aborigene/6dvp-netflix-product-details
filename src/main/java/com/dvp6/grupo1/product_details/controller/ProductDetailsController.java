@@ -21,7 +21,7 @@ public class ProductDetailsController {
 	@Autowired
 	private MovieRepository movieRepository;
 
-	@GetMapping("/api/movies_by_genre")
+	@GetMapping("/moviesByGenre")
 	public ResponseEntity<String> moviesByGenre(@RequestParam(name = "genre") String genre,
 			@RequestParam(name = "top", required = false, defaultValue = "1") Integer top,
 			@RequestParam(name = "order_by") String order_by) {
@@ -85,7 +85,7 @@ public class ProductDetailsController {
 
 	}
 
-	@GetMapping("/api/movie_search")
+	@GetMapping("/movieSearch")
 	public ResponseEntity<String> moviesSearch(@RequestParam(name = "title_search") String title_search,
 			@RequestParam(name = "top", required = false, defaultValue = "1") Integer top,
 			@RequestParam(name = "order_by") String order_by) {
@@ -147,7 +147,7 @@ public class ProductDetailsController {
 		return new ResponseEntity<String>(new Gson().toJson(movie), HttpStatus.OK);
 	}
 
-	@GetMapping("/api/getAll")
+	@GetMapping("/getAll")
 	public Iterable<MovieEntity> getAll() {
 		return movieRepository.findAll();
 	}
