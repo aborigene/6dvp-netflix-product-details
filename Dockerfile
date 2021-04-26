@@ -10,7 +10,7 @@ RUN mvn clean package -DskipTests
 #
 # Package stage
 #
-FROM openjdk:11.0.10-jre-slim
-COPY --from=build /home/app/target/product_details-1.0.0.jar /usr/local/lib/product_details-1.0.0.jar
+FROM openjdk:11.0.11-jre
+COPY --from=build /home/app/target/product-details-1.0.0.jar /usr/local/lib/product-details-1.0.0.jar
 EXPOSE 8091
-ENTRYPOINT ["java","-jar","/usr/local/lib/product_details-1.0.0.jar"]
+ENTRYPOINT ["java","-jar","/usr/local/lib/product-details-1.0.0.jar"]

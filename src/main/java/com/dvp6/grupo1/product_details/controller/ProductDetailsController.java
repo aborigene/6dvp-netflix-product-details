@@ -80,7 +80,6 @@ public class ProductDetailsController {
 				}
 			}
 		}
-
 		return new ResponseEntity<String>(new Gson().toJson(movie), HttpStatus.OK);
 
 	}
