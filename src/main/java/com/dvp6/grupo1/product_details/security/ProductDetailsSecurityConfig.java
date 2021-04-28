@@ -7,7 +7,6 @@
 package com.dvp6.grupo1.product_details.security;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -18,13 +17,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class ProductDetailsSecurityConfig extends WebSecurityConfigurerAdapter {
 
- /*
-   * Método responsável por deixar a documentação anomina.
-   */
-  @Override
-  public void configure(WebSecurity http) throws Exception {
-    http.ignoring().antMatchers("/swagger-product-details");
-  }
   /*
    * Método responsável filtar as permissões para as rotas com base no token jwt.
    */
